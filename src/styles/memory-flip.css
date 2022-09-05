@@ -1,0 +1,57 @@
+.cardBox .card {
+    transform: rotateY( 0deg);
+}
+
+.cardBox.spin .card {
+    transform: rotateY( 180deg);
+}
+
+.card .front,
+.card .back {
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+}
+
+.card .back {
+    transform: rotateY( 180deg);
+}
+
+.cardBox {
+    float: left;
+    font-size: 1.2em;
+    margin: 1% 0 0 1%;
+    perspective: 800px;
+    transition: all 0.3s ease 0s;
+    width: 220px;
+    height: 100px;
+}
+
+.card {
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease 0s;
+    -webkit-animation: giro 1s 1;
+    animation: giro 1s 1;
+    width: 220px;
+    height: 100px;
+}
+
+
+/* @-webkit-keyframes giro {
+    from {
+        transform: rotateY( 180deg);
+    }
+    to {
+        transform: rotateY( 0deg);
+    }
+}
+
+@keyframes giro {
+    from {
+        transform: rotateY( 180deg);
+    }
+    to {
+        transform: rotateY( 0deg);
+    }
+} */

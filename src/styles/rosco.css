@@ -1,0 +1,142 @@
+:root {
+  --total-items: 27;
+}
+
+body {
+  margin: 20px 0;
+  display: flex;
+  gap: 25px;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+#container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(90deg);
+  transition: 1.25s ease-in-out;
+}
+
+#container p {
+  position: absolute;
+  left: 0;
+  transform-origin: 200px;
+  transition: 0.5s ease-in-out all;
+  transition-delay: calc(0.1s * var(--i));
+  transform: rotate(0deg) translateX(180px);
+}
+
+#container p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  outline: 1px solid #fff;
+  color: #fff;
+}
+
+#container p.next {
+  background: rgb(255, 238, 0);
+  color: #000;
+}
+
+#container p.good {
+  background: rgb(70, 247, 0);
+  color: #fff;
+}
+
+#container p.bad {
+  background: rgb(247, 16, 0);
+  color: #fff;
+}
+
+#container p a {
+  transform: rotate(calc(360deg / -27 * var(--e)));
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+#toggle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  transition: 1.25s;
+  transform: rotate(30deg);
+}
+
+#container.active p {
+  transform: rotate(calc(360deg / var(--total-items) * var(--i)));
+}
+
+#rosco-controls button {
+  padding: 10px 15px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#rosco-controls button#setNext {
+  background-color: rgb(255, 230, 0);
+}
+#rosco-controls button#setGood {
+  background-color: rgb(0, 212, 18);
+}
+#rosco-controls button#setBad {
+  background-color: rgb(240, 0, 0);
+}
+
+#rosco-marker {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+#rosco-marker .item {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+}
+
+#rosco-marker .item .circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#rosco-marker .item .circle#time {
+  background-color: rgb(0, 110, 255);
+}
+
+#rosco-marker .item .circle#words {
+  background-color: rgb(0, 212, 18);
+}

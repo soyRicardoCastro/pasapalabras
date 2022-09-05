@@ -1,0 +1,100 @@
+body {
+    color: white;
+}
+
+main {
+    /* width: 730px; */
+    width: 1100px;
+    margin: 100px auto 50px;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.section1 {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0 10px 0px 10px;
+    border-radius: 8px;
+    height: 400px;
+}
+
+h1 {
+    text-align: center;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.section2 {
+    margin-left: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    /* border-top-right-radius: 8px; */
+    /* border-bottom-right-radius: 8px;  */
+    width: 250px;
+    height: 400px;
+    padding: 0 20px;
+    border-radius: 8px;
+}
+
+.estadisticas {
+    border: 1px solid white;
+    height: 90px;
+    border-radius: 8px;
+    padding: 8px 20px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+}
+
+footer {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 80%;
+}
+
+.center_div {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.center_div p a {
+    color: red;
+}
+
+.btn_game {
+    width: 250px;
+    font-size: 25px;
+    height: 40px;
+}
+
+.disable-card {
+    pointer-events: none;
+    overflow-y: auto;
+}
+
+
+/* .word {
+    min-width: 790px;
+} */
+
+button {
+    height: 100px;
+    width: 220px;
+    font-size: 30px;
+    /* color: black; */
+    color: #00000080;
+    font-weight: bold;
+}

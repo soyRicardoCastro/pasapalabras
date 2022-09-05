@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="cache-control" content="no-cache">
+    <title>Juego de Memoria</title>
+
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/memory.css" />
+    <link rel="stylesheet" href="./styles/memory-flip.css" />
+    <link rel="stylesheet" href="./styles/summary-memory.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+</head>
+
+<body>
+    <main id="main" class="disable-card">
+        <section class="section1 word">
+            <h1>Memoria</h1>
+            <table id="table">
+                <tr>
+                    <td>
+                        <div id="card_0" class="cardBox">
+                            <div class="card">
+                                <div class="front">
+                                    <button id="0">1</button>
+                                </div>
+                                <div class="back">
+                                    <button id="back_0"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="card_1" class="cardBox">
+                            <div class="card">
+                                <div class="front">
+                                    <button id="1">2</button>
+                                </div>
+                                <div class="back">
+                                    <button id="back_1"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="card_2" class="cardBox">
+                            <div class="card">
+                                <div class="front">
+                                    <button id="2">3</button>
+                                </div>
+                                <div class="back">
+                                    <button id="back_2"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="card_3" class="cardBox">
+                            <div class="card">
+                                <div class="front">
+                                    <button id="3">4</button>
+                                </div>
+                                <div class="back">
+                                    <button id="back_3"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="card_4" class="cardBox">
+                            <div class="card">
+                                <div class="front">
+                                    <button id="4">5</button>
+                                </div>
+                                <div class="back">
+                                    <button id="back_4"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="card_5" class="cardBox">
+                            <div class="card">
+                                <div class="front">
+                                    <button id="5">6</button>
+                                </div>
+                                <div class="back">
+                                    <button id="back_5"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="card_6" class="cardBox">
+                            <div class="card">
+                                <div class="front">
+                                    <button id="6">7</button>
+                                </div>
+                                <div class="back">
+                                    <button id="back_6"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="card_7" class="cardBox">
+                            <div class="card">
+                                <div class="front">
+                                    <button id="7">8</button>
+                                </div>
+                                <div class="back">
+                                    <button id="back_7"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="card_8" class="cardBox">
+                            <div class="card">
+                                <div class="front">
+                                    <button id="8">9</button>
+                                </div>
+                                <div class="back">
+                                    <button id="back_8"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <section class="section2" style="padding-top: 0px; text-align:center">
+            <h2 id="aciertos" class="estadisticas">Aciertos: 0</h2>
+            <h2 id="t-restante" class="estadisticas">Tiempo: -</h2>
+            <h2 id="movimientos" class="estadisticas">Movimientos: 0</h2>
+        </section>
+    </main>
+    <div class="center_div">
+        <button id="btn_game" class="swal2-confirm swal2-styled" disabled>Nueva Partida</button>
+
+        <p>Abre el panel de este juego para completa experiencia -  <a href="panel-memory.html" target="_blank">Panel</a></p>
+    </div>
+    <!-- <footer>
+        <p>Todos los derechos reservados.
+            <a href=""></a>
+        </p>
+    </footer> -->
+</body>
+
+<script type="module">
+    import { Load } from "./js/system/UI.js";
+    Load();
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+/* * Summary */
+.summary {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.summary .container {
+  border: 2px solid #555;
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 212, 18, 0.897);
+  margin: 40px auto;
+  padding: 5em 3em;
+  color: #fff;
+  text-align: center;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.301);
+  position: relative;
+}
+
+.summary .container h2 {
+  font-size: 2rem;
+  margin: 0 1em 1.5em 1em;
+  color: #fff;
+}
+
+.summary .container p a {
+  color: rgb(72, 40, 255);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.summary .container hr {
+  border: 0;
+  border-bottom: 1px solid #222;
+  margin: 2em 1em;
+}
+
+.summary .container button.close {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-family: inherit;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+}
