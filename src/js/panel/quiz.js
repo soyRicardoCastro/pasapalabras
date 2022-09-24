@@ -11,9 +11,9 @@ export const quizHTML = /* html */`
 
   <input type='text' placeholder='Respuesta (Tiene que ser igual a una opcion)' id='answer' />
 
-  <button data-quiz>Añadir Pregunta</button>
+  <button class='outline' data-quiz>Añadir Pregunta</button>
 
-  <input type='submit' value='Guardar todo'>
+  <button data-save>Guardar todo</button>
 `
 
 const quiz = []
@@ -33,11 +33,10 @@ export function createQuiz (quizForm) {
   }
 
   quiz.push(one)
+  quizForm.reset()
 }
 
 export function saveQuiz () {
   const quizInString = JSON.stringify(quiz)
   window.sessionStorage.setItem('quiz', quizInString)
-
-  const saved = window.sessionStorage.getItem('quiz')
 }

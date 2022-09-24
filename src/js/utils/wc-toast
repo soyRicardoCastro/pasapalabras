@@ -1,0 +1,16 @@
+/*
+ * Skypack CDN - wc-toast@1.2.7
+ *
+ * Learn more:
+ *   📙 Package Documentation: https://www.skypack.dev/view/wc-toast
+ *   📘 Skypack Documentation: https://www.skypack.dev/docs
+ *
+ * Pinned URL: (Optimized for Production)
+ *   ▶️ Normal: https://cdn.skypack.dev/pin/wc-toast@v1.2.7-eURGUKeY8TKxBa07Spbj/mode=imports/optimized/wc-toast.js
+ *   ⏩ Minified: https://cdn.skypack.dev/pin/wc-toast@v1.2.7-eURGUKeY8TKxBa07Spbj/mode=imports,min/optimized/wc-toast.js
+ *
+ */
+
+// Browser-Optimized Imports (Don't directly import the URLs below in your application!)
+export * from '/-/wc-toast@v1.2.7-eURGUKeY8TKxBa07Spbj/dist=es2019,mode=imports/optimized/wc-toast.js';
+export {default} from '/-/wc-toast@v1.2.7-eURGUKeY8TKxBa07Spbj/dist=es2019,mode=imports/optimized/wc-toast.js';

@@ -40,13 +40,17 @@ export class UI {
    */
   showScores (score) {
     const quizEndHTML = /* html */ `
-      <div class="summary">
-        <div class="container">
-          <h2>¡Termino el juego!</h2>
-          <p>Felicidades, tu puntuacion es ${score}, es hora de ir al siguiente juego <a href='letter-soup.html'>¡VAMOS!</a></p>
-          <hr />
-        </div>
-      </div>
+  <dialog open>
+    <article>
+      <h3>¡Terminó el juego!</h3>
+      <p>
+        Felicidades, tu puntuacion es ${score}, es hora de ir al siguiente juego
+      </p>
+      <footer>
+        <a href="letter-soup.html" role="button">Siguiente juego</a>
+      </footer>
+      </article>
+    </dialog>
     `
     const sessionScore = window.sessionStorage.getItem('score')
     sessionScore ? window.sessionStorage.setItem('score', parseInt(sessionScore) + (score * 2)) : window.sessionStorage.setItem('score', (score * 2))
@@ -61,7 +65,7 @@ export class UI {
    */
   showProgress (currentIndex, total) {
     const element = document.getElementById('progress')
-    element.innerHTML = `Question ${currentIndex} of ${total}`
+    element.innerHTML = `Pregunta ${currentIndex} de ${total}`
   }
 
   renderTime () {

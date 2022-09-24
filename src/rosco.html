@@ -5,43 +5,64 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>El Rosco</title>
-    <link rel="stylesheet" href="./styles/global.css">
-    <link rel="stylesheet" href="./styles/text-animation.css">
     <link rel="stylesheet" href="./styles/rosco.css">
-    <link rel="stylesheet" href="./styles/summary.css">
+    <link rel="stylesheet" href="./styles/pico.min.css">
+    <style>
+      a {
+        color: #fff;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+      button {
+        outline: none;
+        border: none;
+      }
+      h2 {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <h2 data-text="rosco">rosco</h2>
+    <main>
+      <article>
+        <header>
+          <h2>R O S C O</h2>
+        </header>
 
-    <div id="container" class="active">
-      <div id="toggle">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
-          <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-        </svg>
-      </div>
-    </div>
-
-    <div id="rosco-controls">
-      <button id="setGood">Correcto</button>
-      <button id="setBad">Incorrecto</button>
-      <button id="setNext">Siguiente</button>
-    </div>
-
-    <div id="rosco-marker">
-      <div class="item">
-        Time
-        <div class="circle" id="time">
-          0
+        <div id="container" class="active container">
+          <div id="toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000" class="bi bi-play-fill" viewBox="0 0 16 16">
+              <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+            </svg>
+          </div>
         </div>
-      </div>
 
-      <div class="item">
-        Words
-        <div class="circle" id="words">
-          0
-        </div>
-      </div>
-    </div>
+        <footer>
+          <div id="rosco-controls" class="container">
+            <button id="setGood" role="button">Correcto</button>
+            <button id="setBad" role="button">Incorrecto</button>
+            <button role="button" id="setNext">Siguiente</button>
+          </div>
+
+          <div id="rosco-marker">
+            <div class="item">
+            Time
+            <div class="circle" id="time">
+              0
+            </div>
+          </div>
+
+          <div class="item">
+            Words
+            <div class="circle" id="words">
+              0
+            </div>
+            </div>
+          </div>
+       </footer>
+      </article>
+    </main>
 
     <script type="module" src="./js/rosco.js"></script>
   </body>

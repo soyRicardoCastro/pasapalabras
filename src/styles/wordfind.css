@@ -5,24 +5,14 @@
 * For all details and documentation:
 *     http://github.com/bunkat/wordfind
 */
-
-p {
-  font: 22pt sans-serif;
-  margin: 20px 20px 0px 20px;
-}
-
-/**
-* Styles for the puzzle
-*/
 #puzzle {
-  padding: 20px;
   margin: 0 auto;
   min-width: 400px;
-  min-height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap:10px;
 }
 
 #puzzle div {
@@ -30,6 +20,12 @@ p {
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#puzzle div button {
+  margin: 0;
 }
 
 /* style for each square in the puzzle */
@@ -37,7 +33,7 @@ p {
   height: 60px;
   width: 60px;
   text-transform: uppercase;
-  background-color: #ff60cf;
+  background-color: var(--primary);
   border: 0;
   font-family: inherit;
   font-size: 26px;
@@ -67,7 +63,7 @@ button::-moz-focus-inner {
 
 /* indicates that all words have been found */
 #puzzle .complete {
-  background-color: green;
+  background-color: var(--contrast);
 }
 
 /**

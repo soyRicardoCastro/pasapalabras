@@ -40,12 +40,17 @@ export const renderSummary = () => {
   const body = document.querySelector('body')
 
   const summary = /* html */ `
-    <div class="container">
-      <h2>¡Termino el juego!</h2>
-      <p>Felicidades, tu puntuacion es ${score}, es hora de ir al siguiente juego <a href='memoria.html'>¡VAMOS!</a></p>
-      <hr />
-      <button class="close" id="close">X</button>
-    </div>
+  <dialog open>
+    <article>
+      <h3>¡Terminó el juego!</h3>
+      <p>
+        Felicidades, tu puntuacion es ${score}, es hora de ir al siguiente juego
+      </p>
+      <footer>
+        <a href="memory.html" role="button">Siguiente juego</a>
+      </footer>
+    </article>
+  </dialog>
   `
   summaryContainer.innerHTML = summary
   body.appendChild(summaryContainer)

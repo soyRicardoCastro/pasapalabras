@@ -5,45 +5,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sopa de letras</title>
-    <link rel="stylesheet" href="./styles/summary.css" />
     <link rel="stylesheet" href="./styles/wordfind.css" />
-    <link rel="stylesheet" href="./styles/global.css" />
-    <link rel="stylesheet" href="./styles/letter-soup.css" />
-    <link rel="stylesheet" href="./styles/text-animation.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./styles/pico.min.css" />
     <script>
       (function(){"use strict";var a,f,x,y,k,l,c,B,w,o;("undefined"!=typeof exports&&null!==exports?exports:window).wordfind=(a="abcdefghijklmnoprstuvwy",y={horizontal:function(n,t,r,o,e){return n+e<=o},horizontalBack:function(n,t,r,o,e){return e<=n+1},vertical:function(n,t,r,o,e){return t+e<=r},verticalUp:function(n,t,r,o,e){return e<=t+1},diagonal:function(n,t,r,o,e){return n+e<=o&&t+e<=r},diagonalBack:function(n,t,r,o,e){return e<=n+1&&t+e<=r},diagonalUp:function(n,t,r,o,e){return n+e<=o&&e<=t+1},diagonalUpBack:function(n,t,r,o,e){return e<=n+1&&e<=t+1}},k={horizontal:function(n,t,r){return{x:0,y:t+1}},horizontalBack:function(n,t,r){return{x:r-1,y:t}},vertical:function(n,t,r){return{x:0,y:t+100}},verticalUp:function(n,t,r){return{x:0,y:r-1}},diagonal:function(n,t,r){return{x:0,y:t+1}},diagonalBack:function(n,t,r){return{x:r-1,y:r-1<=n?t+1:t}},diagonalUp:function(n,t,r){return{x:0,y:t<r-1?r-1:t+1}},diagonalUpBack:function(n,t,r){return{x:r-1,y:r-1<=n?t+1:t}}},l=function(n,t,r){t=c(n,t,r);if(0===t.length)return!1;t=t[Math.floor(Math.random()*t.length)];return o(n,r,t.x,t.y,x[t.orientation]),!0},c=function(n,t,r){for(var o=[],e=t.height,i=t.width,a=r.length,l=0,u=0,f=t.orientations.length;u<f;u++)for(var c,h=t.orientations[u],g=y[h],p=x[h],v=k[h],d=0,s=0;s<e;)g(d,s,e,i,a)?((l<=(c=B(r,n,d,s,p))||!t.preferOverlap&&-1<c)&&(l=c,o.push({x:d,y:s,orientation:h,overlap:c})),i<=++d&&(d=0,s++)):(d=(c=v(d,s,a)).x,s=c.y);return t.preferOverlap?w(o,l):o},B=function(n,t,r,o,e){for(var i=0,a=0,l=n.length;a<l;a++){var u=e(r,o,a),u=t[u.y][u.x];if(u===n[a])i++;else if(""!==u)return-1}return i},w=function(n,t){for(var r=[],o=0,e=n.length;o<e;o++)n[o].overlap>=t&&r.push(n[o]);return r},o=function(n,t,r,o,e){for(var i=0,a=t.length;i<a;i++){var l=e(r,o,i);n[l.y][l.x]=t[i]}},{validOrientations:f=["horizontal","horizontalBack","vertical","verticalUp","diagonal","diagonalUp","diagonalBack","diagonalUpBack"],orientations:x={horizontal:function(n,t,r){return{x:n+r,y:t}},horizontalBack:function(n,t,r){return{x:n-r,y:t}},vertical:function(n,t,r){return{x:n,y:t+r}},verticalUp:function(n,t,r){return{x:n,y:t-r}},diagonal:function(n,t,r){return{x:n+r,y:t+r}},diagonalBack:function(n,t,r){return{x:n-r,y:t+r}},diagonalUp:function(n,t,r){return{x:n+r,y:t-r}},diagonalUpBack:function(n,t,r){return{x:n-r,y:t-r}}},newPuzzle:function(n,t){for(var r,o=0,t=t||{},e=n.slice(0).sort(function(n,t){return n.length<t.length?1:0}),i={height:t.height||e[0].length,width:t.width||e[0].length,orientations:t.orientations||f,fillBlanks:void 0===t.fillBlanks||t.fillBlanks,maxAttempts:t.maxAttempts||3,preferOverlap:void 0===t.preferOverlap||t.preferOverlap};!r;){for(;!r&&o++<i.maxAttempts;)r=function(n,t){for(var r,o,e=[],i=0;i<t.height;i++)for(e.push([]),r=0;r<t.width;r++)e[i].push("");for(i=0,o=n.length;i<o;i++)if(!l(e,t,n[i]))return null;return e}(e,i);r||(i.height++,i.width++,o=0)}return i.fillBlanks&&this.fillBlanks(r,i),r},fillBlanks:function(n){for(var t=0,r=n.length;t<r;t++)for(var o,e=0,i=n[t].length;e<i;e++)n[t][e]||(o=Math.floor(Math.random()*a.length),n[t][e]=a[o])},solve:function(n,t){for(var r={height:n.length,width:n[0].length,orientations:f,preferOverlap:!0},o=[],e=[],i=0,a=t.length;i<a;i++){var l=t[i],u=c(n,r,l);0<u.length&&u[0].overlap===l.length?(u[0].word=l,o.push(u[0])):e.push(l)}return{found:o,notFound:e}},print:function(n){for(var t="",r=0,o=n.length;r<o;r++){for(var e=n[r],i=0,a=e.length;i<a;i++)t+=(""===e[i]?" ":e[i])+" ";t+="\n"}return console.log(t),t}})}).call(this);
     </script>
     <script>
       const $=e=>document.querySelector(e);!function(n,v,h){"use strict";var o,l,u,s,i,d,c;function a(){v(this).addClass("selected"),l=this,s.push(this),i=v(this).text()}function f(e){if(l){var t=s[s.length-1];if(t!=e){for(var n,r=0,o=s.length;r<o;r++)if(s[r]==e){n=r+1;break}for(;n<s.length;)v(s[s.length-1]).removeClass("selected"),s.splice(n,1),i=i.substr(0,i.length-1);var a=c(+v(l).attr("x"),+v(l).attr("y"),+v(e).attr("x"),+v(e).attr("y"));a&&(s=[l],i=v(l).text(),t!==l&&(v(t).removeClass("selected"),t=l),u=a);t=c(+v(t).attr("x"),+v(t).attr("y"),+v(e).attr("x"),+v(e).attr("y"));t&&(u&&u!==t||(u=t,d(e)))}}}function z(e){var t=e.originalEvent.touches[0].pageX,e=e.originalEvent.touches[0].pageY,e=n.elementFromPoint(t,e);f(e)}function p(){f(this)}function g(){for(var e=0,t=o.length;e<t;e++)o[e]===i&&(v(".selected").addClass("found"),o.splice(e,1),v("."+i).addClass("wordFound")),0===o.length&&v(".puzzleSquare").addClass("complete");v(".selected").removeClass("selected"),s=[],i="",u=l=null}window.wordfindgame=(s=[],i="",d=function(e){for(var t=0,n=o.length;t<n;t++)if(0===o[t].indexOf(i+v(e).text())){v(e).addClass("selected"),s.push(e),i+=v(e).text();break}},c=function(e,t,n,r){for(var o in h.orientations){var a=(0,h.orientations[o])(e,t,1);if(a.x===n&&a.y===r)return o}return null},{create:function(e,t,n,r){o=e.slice(0).sort();r=h.newPuzzle(e,r);return function(e,t){for(var n="",r=0,o=t.length;r<o;r++){var a=t[r];n+="<div>";for(var l=0,u=a.length;l<u;l++)n+='<button class="puzzleSquare" x="'+l+'" y="'+r+'">',n+=a[l]||"&nbsp;",n+="</button>";n+="</div>"}v(e).html(n)}(t,r),function(e,t){for(var n="<ul>",r=0,o=t.length;r<o;r++){var a=t[r];n+='<li class="word '+a+'">'+a}n+="</ul>",v(e).html(n)}(n,o),window.navigator.msPointerEnabled?(v(".puzzleSquare").on("MSPointerDown",a),v(".puzzleSquare").on("MSPointerOver",f),v(".puzzleSquare").on("MSPointerUp",g)):(v(".puzzleSquare").mousedown(a),v(".puzzleSquare").mouseenter(p),v(".puzzleSquare").mouseup(g),v(".puzzleSquare").on("touchstart",a),v(".puzzleSquare").on("touchmove",z),v(".puzzleSquare").on("touchend",g)),r},solve:function(e,t){for(var n=h.solve(e,t).found,r=0,o=n.length;r<o;r++){var a=n[r].word,l=n[r].orientation,u=n[r].x,s=n[r].y,i=h.orientations[l];if(!v("."+a).hasClass("wordFound")){for(var d=0,c=a.length;d<c;d++){var f=i(u,s,d);v('[x="'+f.x+'"][y="'+f.y+'"]').addClass("solved")}v("."+a).addClass("wordFound")}}}})}(document,jQuery,wordfind);
     </script>
+    <style>
+    h2 {
+      text-align: center;
+    }
+
+    #controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    #marker {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 60px;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content:center;
+      gap: 5px;
+      font-size: 20px;
+    }
+
+    .circle {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+      width: 60px;
+      height: 60px;
+      background-color: var(--primary);
+      border-radius: 50%;
+    }
+    </style>
   </head>
   <body>
-    <div class="container">
+    <main class="container">
       <h2 data-text="Sopa de letras">Sopa de letras</h2>
 
-      <div id="puzzle"></div>
+      <article>
+        <header>
+          <strong id="title"></strong>
+        </header>
+        <div id="puzzle"></div>
 
-      <div id="controls">
-        <button id="start">Empezar</button>
-        <button id="next">Pasar</button>
-        <button id="good">Bien</button>
-      </div>
+        <footer>
+          <div id="controls">
+            <a role="button" href="#" id="start">Empezar</a>
+            <a role="button" href="#" id="next">Pasar</a>
+            <a role="button" href="#" id="good">Bien</a>
+          </div>
+         
+          <div id="marker">
+            <div class="item">
+              Time
+              <strong class="circle" id="time">50</strong>
+            </div>
 
-      <div id="marker">
-        <div class="item">
-          Time
-          <div class="circle" id="time">50</div>
-        </div>
+            <div class="item">
+              Words
+              <strong class="circle" id="score">0</strong>
+            </div>
+          </div>
+        </footer>
+      </article>
 
-        <div class="item">
-          Words
-          <div class="circle" id="score">0</div>
-        </div>
-      </div>
 
       <div id="words"></div>
-    </div>
+    </main>
 
     <script type="module">
       import { manipulateTime, pauseGame, startGame, renderScore, renderSummary } from "./js/letter-soup.js";
@@ -63,6 +106,9 @@
           "#puzzle",
           "#words"
         );
+
+        const title = document.querySelector("#title")
+        title.innerText = words[index].title
       }
 
       const puzzle = window.wordfind.newPuzzle(words[index].words, {

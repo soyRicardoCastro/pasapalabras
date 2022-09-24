@@ -118,12 +118,18 @@ export const renderSummary = () => {
   const body = document.querySelector('body')
 
   const summary = /* html */ `
-    <div class="container">
-      <h2>¡Termino el juego!</h2>
-      <p>Felicidades, tu puntuacion es ${score}</p>
-      <hr />
-      <button class="close" id="close">X</button>
-    </div>
+    <dialog open>
+  <article>
+    <h3>¡Ha terminado el juego!</h3>
+    <p>
+      Felicidades, tu puntuacion es ${score}
+    </p>
+    <footer>
+      <a href="index.html" role="button" class="secondary">Menu</a>
+      <a href="panel.html" role="button">Panel</a>
+    </footer>
+  </article>
+</dialog>
   `
 
   summaryContainer.innerHTML = summary

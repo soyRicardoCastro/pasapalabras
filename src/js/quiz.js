@@ -64,6 +64,8 @@ const renderPage = (quiz, ui) => {
     startGame()
     showTime()
     body?.removeChild(htmlBtn)
+    const dialog = document.querySelector('dialog')
+    dialog.removeAttribute('open')
   })
 
   renderPage(quiz, ui)
