@@ -1,76 +1,45 @@
-body {
+header {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+figure {
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  margin: auto 0;
+  width: 100px;
+}
+
+figure image {
   width: 100%;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90%;
   margin: 0 auto;
 }
 
-body h1 {
-  position: absolute;
-  top: 20px;
-  font-size: 28px;
-  color: #fff;
-}
-
-body h1 a {
-  color: red
-}
-
-.container {
-  width: 90%;
-  height: 100%;
-  margin: auto;
-  display: grid;
-  place-items: center;
-  place-content: center;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 200px 200px;
-}
-
-.container .card {
-  width: 90%;
-  height: 120px;
-  border-radius: 40px;
-  background: rgb(0, 216, 54);
+section a {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: var(--primary);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   color: #fff;
-  border: 5px solid #fff;
-  transition:.3s ease all;
+  font-size: 42px;
 }
 
-.container .card:hover {
-  background: rgb(0, 196, 49);
+a.azul {
+  background-color: #1e88e5;
 }
 
-.container .card:nth-child(3n+1) {
-  background: rgb(231, 33, 33);
-}
-
-.container .card:nth-child(3n+1):hover {
-  background: rgb(194, 25, 25);
-}
-
-.container .card button {
-  width: 90%;
-  height: 90%;
-  background-color: transparent;
-}
-
-.container .card button a {
-  font-size: 50px;
-  color: transparent;
-  -webkit-text-stroke: #fff 1px;
-}
-
-@media screen and (max-width: 800px) {
-  .container {
-    height: 100%;
-    grid-template-columns: 1fr;
-    grid-template-rows: 200px 200px 200px 200px;
-  }
+a.rojo {
+  background-color: #e01424;
 }

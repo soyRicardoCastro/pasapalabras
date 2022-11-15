@@ -13,6 +13,7 @@ body {
 
 #container {
   position: relative;
+  left: -12px;
   width: 400px;
   height: 400px;
   display: flex;
@@ -67,6 +68,7 @@ body {
 
 #toggle {
   position: absolute;
+  top: 155px;
   width: 60px;
   height: 60px;
   background: #fff;
@@ -107,6 +109,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 90%;
+  margin: 0 auto;
 }
 
 #rosco-marker .item {

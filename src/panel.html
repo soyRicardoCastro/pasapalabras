@@ -7,7 +7,7 @@
   <title>Panel - Pasapalabras</title>
   <link rel="stylesheet" href="./styles/pico.min.css" />
   <script type="module">
-  import { toast } from 'https://cdn.skypack.dev/wc-toast';
+  import { toast } from 'https://cdn.skypack.dev/wc-toast'
  
   toast('¡Llena el formulario para todos los juegos y juega!', {
     icon: {
@@ -15,13 +15,18 @@
     }
   })
   </script>
+  <style>
+    figure {
+      width: 100px;
+    }
+  </style>
 </head>
 <body>
   <wc-toast></wc-toast>
   <nav class="container">
-    <ul>
-      <strong>p a n e l</strong>
-    </ul>
+    <figure>
+      <img src="./images/logo.png" alt="">
+    </figure>
 
     <ul>
       <li id="quiz">
@@ -34,17 +39,9 @@
         <a>Memoria</a>
       </li>
       <li>
-        <a href="index.html" role="button">Ir a jugar</a>
+        <a href="quiz.html" role="button">Ir a jugar</a>
       </li>
     </ul>
-
-      <!--
-
-      <button>
-
-      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill:#fff;transform: ;msFilter:;"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
-    </button>
--->
   </nav>
 
   <main id="app" class="container">
